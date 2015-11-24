@@ -1,0 +1,10 @@
+{
+  "alumnos":[
+    {"nombre":"Jorge","nota":9.43},
+    {"nombre":"Carlos","nota":4.32},
+    {"nombre": "Pepito", "nota": 5},
+    {"nombre": "Jaimito", "nota" : 4.3},
+    {"nombre": "Mariquita", "nota": 7.6},
+    {"nombre": "Antoñico", "nota": 3.2},
+    {"nombre": "Pepita", "nota": 9.2}
+  ]}
