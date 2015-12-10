@@ -3,66 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <title>Chat</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <style type="text/css">
+    h1 {
+      text-align: center;
+      color: #2a8b7c;
+      text-decoration: underline;
+    }
+
+    #status {
+      text-align: right;
+      padding-right: 10px;
+    }
+
+    #chatWindows {
+      height: 400px;
+      background: #fafafa;
+      border: 1px solid #e6e6e6;
+    }
+
+    #users {
+      float:right;
+      height: 100%;
+      padding-left: 16px;
+      padding-right: 16px;
+      font-size: 14px;
+      border-left: 1px solid #e6e6e6;
+    }
+
+    #chat {
+      height: 400px;
+      overflow: auto;
+      align-items: flex-end;
+      font-size: 14px;
+    }
+
+    #message {
+      width: 81%;
+      line-height: 30px;
+      float:left;
+      border: 1px solid #e6e6e6;
+    }
+
+    #submitbutton {
+      float: right;
+      width: 106px;
+      line-height: 27px;
+      background: #2a8b7c;
+      color: #e6e6e6;
+      border: 1px solid #e6e6e6;
+    }
+
+    #username {
+      float: left;
+      width: 127px;
+      height: 31px;
+      line-height: 1px;
+      background: #f0f0f0;
+      border: 1px solid #e6e6e6;
+      color: #585858;
+      text-align: center;
+    }
+
+  </style>
 </head>
-<style type="text/css">
-  h1 {
-    text-align: center;
-    color: #2a8b7c;
-    text-decoration: underline;
-  }
-
-  #status {
-    text-align: right;
-    padding-right: 10px;
-  }
-
-  #chatWindows {
-    height: 400px;
-    background: #fafafa;
-    border: 1px solid #e6e6e6;
-  }
-
-  #users {
-    float:right;
-    height: 100%;
-    padding-left: 16px;
-    padding-right: 16px;
-    font-size: 14px;
-    border-left: 1px solid #e6e6e6;
-  }
-
-  #chat {
-    height: 400px;
-    overflow: auto;
-    align-items: flex-end;
-    font-size: 14px;
-  }
-
-  #message {
-    width: 81%;
-    line-height: 30px;
-    float:left;
-    border: 1px solid #e6e6e6;
-  }
-
-  #submitbutton {
-    float: right;
-    width: 106px;
-    line-height: 27px;
-    background: #2a8b7c;
-    color: #e6e6e6;
-    border: 1px solid #e6e6e6;
-  }
-
-  #username {
-    float: left;
-    line-height: 30px;
-    background: #f0f0f0;
-    border: 1px solid #e6e6e6;
-    text-align: center
-  }
-
-</style>
 <body>
   <h1> Chat </h1>
   <p id="status">Status: </p>
@@ -74,14 +78,13 @@
 
     </div>
     <form >
-      <input type="text" id="username" value="" disabled>
+      <div id="username"></div>
       <input type="text" id="message">
       <input type="submit" id="submitbutton" value="send">
     </form>
   </div>
 
   <!-- Añadimos los archivos js necesarios -->
-  <script src="/js/main.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
