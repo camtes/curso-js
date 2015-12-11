@@ -2,29 +2,25 @@ var express = require("express");
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-
+var numUser = 0;
+var userConected = [];
 app.use(express.static('public'));
 
-app.get('/', function(req, res) {
-
-});
-
 io.on('connection', function (socket) {
-    socket.emit('status', "Connected");
+  userConected[0] = numUser;
+  numUser++;
 
-    socket.on('username', function (content) {
-        console.log("Received: " +content);
-        //socket.emit('receive', content);
-      });
+  socket.emit('status', "Connected");
 
-      socket.on('msg', function (content) {
-          console.log("Received:"+content);
-          socket.emit('receive', content);
-        });
+  socket.on('msg', function (content) {
+    console.log("Received:"+content.message);
+    io.emit('receive', content);
+  });
 
-    socket.on('disconnect', function () {
-        console.log('User disconnected');
-    });
+  socket.on('disconnect', function () {
+    console.log('User disconnected');
+    numUser--;
+  });
 });
 
 http.listen(8080, function() {

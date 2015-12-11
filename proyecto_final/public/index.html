@@ -22,15 +22,6 @@
       border: 1px solid #e6e6e6;
     }
 
-    #users {
-      float:right;
-      height: 100%;
-      padding-left: 16px;
-      padding-right: 16px;
-      font-size: 14px;
-      border-left: 1px solid #e6e6e6;
-    }
-
     #chat {
       height: 400px;
       overflow: auto;
@@ -71,13 +62,10 @@
   <h1> Chat </h1>
   <p id="status"></p>
   <div id="chatWindows">
-    <div id="users">
-      <h4> Users online </h4>
-    </div>
     <div id="chat">
 
     </div>
-    <form>
+    <form onsubmit="return false;">
       <div id="username"></div>
       <input type="text" id="message">
     </form>

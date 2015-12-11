@@ -1,4 +1,7 @@
-var socket = io.connect("http://localhost:8080");
+var server = var url = window.location.href;
+var socket = io.connect(server);
+
+console.log(server);
 
 socket.on('connect', function() {
     var notityobj=document.getElementById("notify");
