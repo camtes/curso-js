@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Chat</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <style type="text/css">
@@ -69,7 +69,7 @@
 </head>
 <body>
   <h1> Chat </h1>
-  <p id="status">Status: </p>
+  <p id="status"></p>
   <div id="chatWindows">
     <div id="users">
       <h4> Users online </h4>
@@ -77,14 +77,16 @@
     <div id="chat">
 
     </div>
-    <form >
+    <form>
       <div id="username"></div>
       <input type="text" id="message">
-      <input type="submit" id="submitbutton" value="send">
     </form>
+
+    <button id="submitbutton"> send </button>
   </div>
 
   <!-- Añadimos los archivos js necesarios -->
-  <script src="js/main.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>

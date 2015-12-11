@@ -2,7 +2,7 @@ var socket = io.connect("http://localhost:8080");
 
 socket.on('connect', function() {
     var notityobj=document.getElementById("notify");
-	   notityobj.innerHTML=notityobj.innerHTML+'<p><strong> Server Conectado </strong></p>';
+	   notityobj.innerHTML='<strong> Server Conectado </strong>';
 	    notityobj.scrollTop = notityobj.scrollHeight;
 });
 
