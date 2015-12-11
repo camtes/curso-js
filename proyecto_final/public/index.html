@@ -29,6 +29,15 @@
       font-size: 14px;
     }
 
+    #usersConnected {
+      float:right;
+      height: 100%;
+      padding-left: 16px;
+      padding-right: 16px;
+      font-size: 14px;
+      border-left: 1px solid #e6e6e6;
+    }
+
     #message {
       width: 81%;
       line-height: 30px;
@@ -63,7 +72,9 @@
   <p id="status"></p>
   <div id="chatWindows">
     <div id="chat">
-
+      <div id="usersConnected">
+        <h4> Users online </h4>
+      </div>
     </div>
     <form onsubmit="return false;">
       <div id="username"></div>

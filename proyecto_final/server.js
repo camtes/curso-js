@@ -18,6 +18,7 @@ io.on('connection', function (socket) {
     var u = new user.User(users.length, name);
     users.push(u);
     console.log(name+" connected");
+    io.emit("userOnline", users);
   });
 
   socket.on('setMessage', function (jsonMessage) {
@@ -35,6 +36,9 @@ io.on('connection', function (socket) {
     // Elimino al usuario del array
     var index = users.indexOf(users[idUser].getId());
     users.splice(index,1);
+
+    // Actualizo usuarios conectados
+    io.emit("userOnline", users);
   });
 
   socket.on('disconnect', function (idUser) {
